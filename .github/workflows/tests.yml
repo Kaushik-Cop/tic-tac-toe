@@ -23,11 +23,11 @@ jobs:
         run: pip install coverage
 
       - name: Run tests
-        run: python -m unittest discover
+        run: python -m unittest discover -s . -p "test_*.py"
 
       - name: Generate coverage HTML report
         run: |
-          coverage run -m unittest discover
+          coverage run -m unittest discover -s . -p "test_*.py"
           coverage html
 
       - name: Upload coverage report
